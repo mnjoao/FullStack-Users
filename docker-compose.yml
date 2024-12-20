@@ -1,0 +1,40 @@
+version: '3.8'
+
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  mysql-container:
+    image: mysql:8.0
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: usuarios
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+  backend-container:
+    build:
+      context: ./backend
+    container_name: backend-container
+    depends_on:
+      - mysql-container
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  frontend-container:
+    build:
+      context: ./frontend
+    container_name: frontend-container
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
