@@ -5,14 +5,14 @@
 <body>
 
 <h2>Funcionalidades</h2>
-<h3>Backend</h3>
+<h3><a href="https://github.com/mnjoao/FullStack-Users/tree/main/backend" target="_blank">Backend<a/></h3>
 <ul>
     <li><strong>Autenticação e Autorização:</strong> Utiliza tokens JWT para autenticação e controle de acesso baseado em roles (<code>ADMIN</code> e <code>USER</code>).</li>
     <li><strong>Operações CRUD:</strong> Gerenciamento de usuários com suporte a diferentes roles.</li>
     <li><strong>Integração com MySQL:</strong> Banco de dados configurado com JPA/Hibernate.</li>
 </ul>
 
-<h3>Frontend</h3>
+<h3><a href="https://github.com/mnjoao/FullStack-Users/tree/main/frontend" target="_blank">Frontend<a/></h3>
 <ul>
     <li><strong>Interface Responsiva:</strong> Desenvolvido com React e Bootstrap.</li>
     <li><strong>Gestão de Usuários:</strong> Páginas para listar, criar, editar e visualizar usuários.</li>
@@ -22,6 +22,7 @@
 <h2>Estrutura do Projeto</h2>
 
 <h3>Backend</h3>
+<p>Backend: https://github.com/mnjoao/FullStack-Users/tree/main/backend</p>
 <h4>Principais Arquivos</h4>
 <ul>
     <li><strong><a href="backend/src/main/java/com/fullstackbackend/controller/AuthenticationController.java">AuthenticationController.java</a>:</strong> Controlador responsável pelo login e registro de usuários.</li>
@@ -31,7 +32,18 @@
     <li><strong><a href="backend/src/main/java/com/fullstackbackend/service/TokenService.java">TokenService.java</a>:</strong> Serviço responsável por gerar e validar tokens JWT.</li>
 </ul>
 
-<h4>Fluxo de primeiro Login</h4>
+<h3>Frontend</h3>
+<p>Frontend: https://github.com/mnjoao/FullStack-Users/tree/main/frontend</p>
+<h4>Principais Arquivos</h4>
+<ul>
+    <li><strong><a href="frontend/src/App.js">App.js</a>:</strong> Arquivo principal que gerencia as rotas e layout.</li>
+    <li><strong><a href="frontend/src/axiosConfig.js">axiosConfig.js</a>:</strong> Configuração padrão para chamadas à API com Axios.</li>
+    <li><strong><a href="frontend/src/pages/Login.js">Login.js</a>:</strong> Página de login do usuário.</li>
+    <li><strong><a href="frontend/src/users/AddUser.js">AddUser.js</a>:</strong> Página para adicionar novos usuários.</li>
+    <li><strong><a href="frontend/src/users/EditUser.js">EditUser.js</a>:</strong> Página para editar informações de usuários.</li>
+    <li><strong><a href="frontend/src/users/ViewUser.js">ViewUser.js</a>:</strong> Página para visualizar detalhes de um usuário.</li>
+</ul>
+<h3>Fluxo de primeiro Login</h3>
 <p><strong>Endpoint para login:</strong> <code>POST http://localhost:8080/auth/register </code></p>
 <p><strong>Corpo da requisição:</strong></p>
 <pre><code>{
@@ -45,18 +57,6 @@
 "token": "eyJhbGciOiJIUzI1NiIsInR5..."
 }
 </code></pre>
-
-<h3>Frontend</h3>
-<h4>Principais Arquivos</h4>
-<ul>
-    <li><strong><a href="frontend/src/App.js">App.js</a>:</strong> Arquivo principal que gerencia as rotas e layout.</li>
-    <li><strong><a href="frontend/src/axiosConfig.js">axiosConfig.js</a>:</strong> Configuração padrão para chamadas à API com Axios.</li>
-    <li><strong><a href="frontend/src/pages/Login.js">Login.js</a>:</strong> Página de login do usuário.</li>
-    <li><strong><a href="frontend/src/users/AddUser.js">AddUser.js</a>:</strong> Página para adicionar novos usuários.</li>
-    <li><strong><a href="frontend/src/users/EditUser.js">EditUser.js</a>:</strong> Página para editar informações de usuários.</li>
-    <li><strong><a href="frontend/src/users/ViewUser.js">ViewUser.js</a>:</strong> Página para visualizar detalhes de um usuário.</li>
-</ul>
-
 <h2>Documentação dos Endpoints</h2>
 
 <h3>Autenticação</h3>
