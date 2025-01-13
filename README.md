@@ -73,10 +73,7 @@
 }
 </code></pre>
 <p><strong>Resposta:</strong></p>
-<pre><code>{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5..."
-}
-</code></pre>
+<p>{ "token": "eyJhbGciOiJIUzI1NiIsInR5..." }</p>
 <p><strong>Login no Frontend:</strong></p>
 <ol>
     <li>Acesse: <a href="http://localhost:3000/login" target="_blank">http://localhost:3000/login</a></li>
