@@ -22,8 +22,7 @@
 <h2>Estrutura do Projeto</h2>
 
 <h3>Backend</h3>
-<p>Backend: https://github.com/mnjoao/FullStack-Users/tree/main/backend</p>
-<h4>Principais Arquivos</h4>
+<p>Backend: <a href="https://github.com/mnjoao/FullStack-Users/tree/main/backend" target="_blank">github.com/mnjoao/FullStack-Users/tree/main/backend</a></p><h4>Principais Arquivos</h4>
 <ul>
     <li><strong><a href="backend/src/main/java/com/fullstackbackend/controller/AuthenticationController.java">AuthenticationController.java</a>:</strong> Controlador responsável pelo login e registro de usuários.</li>
     <li><strong><a href="backend/src/main/java/com/fullstackbackend/controller/UserController.java">UserController.java</a>:</strong> Controlador que gerencia operações CRUD de usuários.</li>
@@ -33,8 +32,7 @@
 </ul>
 
 <h3>Frontend</h3>
-<p>Frontend: https://github.com/mnjoao/FullStack-Users/tree/main/frontend</p>
-<h4>Principais Arquivos</h4>
+<p>Frontend: <a href="https://github.com/mnjoao/FullStack-Users/tree/main/frontend" target="_blank">github.com/mnjoao/FullStack-Users/tree/main/frontend</a></p><h4>Principais Arquivos</h4>
 <ul>
     <li><strong><a href="frontend/src/App.js">App.js</a>:</strong> Arquivo principal que gerencia as rotas e layout.</li>
     <li><strong><a href="frontend/src/axiosConfig.js">axiosConfig.js</a>:</strong> Configuração padrão para chamadas à API com Axios.</li>
@@ -43,28 +41,59 @@
     <li><strong><a href="frontend/src/users/EditUser.js">EditUser.js</a>:</strong> Página para editar informações de usuários.</li>
     <li><strong><a href="frontend/src/users/ViewUser.js">ViewUser.js</a>:</strong> Página para visualizar detalhes de um usuário.</li>
 </ul>
-<h3>Fluxo de primeiro Login</h3>
-<p><strong>Endpoint para login:</strong> <code>POST http://localhost:8080/auth/register </code></p>
+<h2>Rodando com Docker</h2>
+<ol>
+    <li>
+        <strong>Clone o Repositório:</strong>
+        <pre><code>git clone https://github.com/mnjoao/FullStack-Users.git</code></pre>
+    </li>
+    <li>
+        <strong>Acesse o Diretório do Projeto:</strong>
+        <pre><code>cd FullStack-Users</code></pre>
+    </li>
+    <li>
+        <strong>Build e Inicialização dos Containers:</strong>
+        <pre><code>docker-compose up --build</code></pre>
+    </li>
+    <li>
+        <strong>Acesse a Aplicação:</strong>
+        <ul>
+            <li><strong>Frontend:</strong> <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+            <li><strong>Backend:</strong> <a href="http://localhost:8080" target="_blank">http://localhost:8080</a></li>
+        </ul>
+    </li>
+</ol>
+<h3>Fluxo de Primeiro Login</h3>
+<p><strong>Endpoint para criação de usuário:</strong> <code>POST http://localhost:8080/auth/register</code></p>
 <p><strong>Corpo da requisição:</strong></p>
 <pre><code>{
-"username": "admin",
-"password":"$2a$10$xjxBKSKZLamcCK5C9ZskPOrD2NC9Gix/MU.PYyEUz3WYMy/PNkgFW",
-"role": "ADMIN"
+    "username": "admin",
+    "password": "$2a$10$xjxBKSKZLamcCK5C9ZskPOrD2NC9Gix/MU.PYyEUz3WYMy/PNkgFW",
+    "role": "ADMIN"
 }
 </code></pre>
 <p><strong>Resposta:</strong></p>
 <pre><code>{
-"token": "eyJhbGciOiJIUzI1NiIsInR5..."
+    "token": "eyJhbGciOiJIUzI1NiIsInR5..."
 }
 </code></pre>
+<p><strong>Login no Frontend:</strong></p>
+<ol>
+    <li>Acesse: <a href="http://localhost:3000/login" target="_blank">http://localhost:3000/login</a></li>
+    <li>Use as credenciais criadas no passo anterior:</li>
+    <ul>
+        <li><strong>Usuário:</strong> admin</li>
+        <li><strong>Senha:</strong> bcrypt configurado (ou <code>123</code>, caso especificado)</li>
+    </ul>
+</ol>
 <h2>Documentação dos Endpoints</h2>
+
 
 <h3>Autenticação</h3>
 <ul>
     <li><strong><code>POST /auth/username</code>:</strong> Login de usuários.</li>
     <li><strong><code>POST /auth/register</code>:</strong> Registro de novos usuários.</li>
 </ul>
-
 <h3>Usuários</h3>
 <ul>
     <li><strong><code>GET /users</code>:</strong> Lista todos os usuários.</li>
